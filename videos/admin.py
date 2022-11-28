@@ -6,8 +6,8 @@ from .models import VideoPublishedProxy, VideoAllProxy
 class VideoAllAdmin(admin.ModelAdmin):
   list_display = ['title', 'video_id', 'id', 'is_published']
   search_fields = ['title']
-  list_filter = ['active'] # right filtr navbar
-  readonly_fields = ['id']
+  list_filter = ['state', 'active'] # right filtr navbar
+  readonly_fields = ['id', 'publishtimestamp']
   
   # def published(self, obj): #
   #   return obj.active
